@@ -1,0 +1,11 @@
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/bin/Debug/net9.0/EShop.Messaging.deps.json
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/bin/Debug/net9.0/EShop.Messaging.dll
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/bin/Debug/net9.0/EShop.Messaging.pdb
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/obj/Debug/net9.0/EShop.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/obj/Debug/net9.0/EShop.Messaging.AssemblyInfoInputs.cache
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/obj/Debug/net9.0/EShop.Messaging.AssemblyInfo.cs
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/obj/Debug/net9.0/EShop.Messaging.csproj.CoreCompileInputs.cache
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/obj/Debug/net9.0/EShop.Messaging.dll
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/obj/Debug/net9.0/refint/EShop.Messaging.dll
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/obj/Debug/net9.0/EShop.Messaging.pdb
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Messaging/EShop.Messaging/obj/Debug/net9.0/ref/EShop.Messaging.dll

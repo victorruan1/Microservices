@@ -1,0 +1,34 @@
+# General
+.git
+.gitignore
+.gitattributes
+.vs
+.vscode
+README.md
+LICENSE
+
+# .NET build artifacts
+**/bin/
+**/obj/
+**/out/
+
+# User secrets and local settings
+**/App_Data/
+**/appsettings.Local.json
+**/appsettings.Development.local.json
+**/*.user
+**/*.suo
+
+# Node / frontend
+**/node_modules/
+**/dist/
+**/build/
+
+# Docker
+**/.docker/
+**/Dockerfile.*
+docker-compose.override.yml
+
+# OS files
+.DS_Store
+Thumbs.db
