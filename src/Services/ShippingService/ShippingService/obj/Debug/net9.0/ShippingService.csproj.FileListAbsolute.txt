@@ -163,3 +163,4 @@
 /Users/victorruan/MicroService/Microservices/src/Services/ShippingService/ShippingService/obj/Debug/net9.0/ShippingService.pdb
 /Users/victorruan/MicroService/Microservices/src/Services/ShippingService/ShippingService/obj/Debug/net9.0/ShippingService.genruntimeconfig.cache
 /Users/victorruan/MicroService/Microservices/src/Services/ShippingService/ShippingService/obj/Debug/net9.0/ref/ShippingService.dll
+/Users/victorruan/MicroService/Microservices/src/Services/ShippingService/ShippingService/obj/Debug/net9.0/ShippingService.sourcelink.json

@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../../../BuildingBlocks/EShop.Messaging/EShop.Messaging/EShop.Messaging.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -25,3 +25,4 @@
 /Users/victorruan/MicroService/Microservices/src/Gateway/Gateway/obj/Debug/net9.0/Gateway.pdb
 /Users/victorruan/MicroService/Microservices/src/Gateway/Gateway/obj/Debug/net9.0/Gateway.genruntimeconfig.cache
 /Users/victorruan/MicroService/Microservices/src/Gateway/Gateway/obj/Debug/net9.0/ref/Gateway.dll
+/Users/victorruan/MicroService/Microservices/src/Gateway/Gateway/obj/Debug/net9.0/Gateway.sourcelink.json

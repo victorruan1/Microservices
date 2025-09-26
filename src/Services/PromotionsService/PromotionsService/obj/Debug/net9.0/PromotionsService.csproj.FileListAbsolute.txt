@@ -163,3 +163,10 @@
 /Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/obj/Debug/net9.0/PromotionsService.pdb
 /Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/obj/Debug/net9.0/PromotionsService.genruntimeconfig.cache
 /Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/obj/Debug/net9.0/ref/PromotionsService.dll
+/Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/bin/Debug/net9.0/Azure.Core.Amqp.dll
+/Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/bin/Debug/net9.0/Azure.Messaging.ServiceBus.dll
+/Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/bin/Debug/net9.0/Microsoft.Azure.Amqp.dll
+/Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/bin/Debug/net9.0/RabbitMQ.Client.dll
+/Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/bin/Debug/net9.0/EShop.Messaging.dll
+/Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/bin/Debug/net9.0/EShop.Messaging.pdb
+/Users/victorruan/MicroService/Microservices/src/Services/PromotionsService/PromotionsService/obj/Debug/net9.0/PromotionsService.sourcelink.json

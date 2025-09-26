@@ -37,6 +37,7 @@
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/bin/Debug/net9.0/Microsoft.SqlServer.Server.dll
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/bin/Debug/net9.0/Microsoft.Win32.SystemEvents.dll
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/bin/Debug/net9.0/Mono.TextTemplating.dll
+/Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/bin/Debug/net9.0/RabbitMQ.Client.dll
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/bin/Debug/net9.0/Serilog.dll
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/bin/Debug/net9.0/Serilog.AspNetCore.dll
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/bin/Debug/net9.0/Serilog.Extensions.Hosting.dll
@@ -149,6 +150,7 @@
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/OrderService.csproj.CoreCompileInputs.cache
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/OrderService.MvcApplicationPartsAssemblyInfo.cs
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/OrderService.MvcApplicationPartsAssemblyInfo.cache
+/Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/OrderService.sourcelink.json
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/rjimswa.dswa.cache.json
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json

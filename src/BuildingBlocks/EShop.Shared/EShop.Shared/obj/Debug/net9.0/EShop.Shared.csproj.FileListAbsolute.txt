@@ -9,3 +9,4 @@
 /Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Shared/EShop.Shared/obj/Debug/net9.0/refint/EShop.Shared.dll
 /Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Shared/EShop.Shared/obj/Debug/net9.0/EShop.Shared.pdb
 /Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Shared/EShop.Shared/obj/Debug/net9.0/ref/EShop.Shared.dll
+/Users/victorruan/MicroService/Microservices/src/BuildingBlocks/EShop.Shared/EShop.Shared/obj/Debug/net9.0/EShop.Shared.sourcelink.json
