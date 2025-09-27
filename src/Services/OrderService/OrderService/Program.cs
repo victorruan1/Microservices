@@ -21,19 +21,8 @@ builder.Services.AddDbContext<OrderDbContext>(o =>
 builder.Services.AddSingleton<OrderQueuePublisher>();
 
 var app = builder.Build();
-
-// Apply migrations (will create database if it doesn't exist)
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<OrderDbContext>();
-    db.Database.Migrate();
-}
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.MapGet("/health", () => Results.Ok(new { status = "Healthy", service = "OrderService" }));
 
