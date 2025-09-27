@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +17,24 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ReviewsDbContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
 );
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+        };
+    });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", p => p.RequireRole("Admin"));
+    options.AddPolicy("CustomerOrAdmin", p => p.RequireRole("Customer", "Admin"));
+});
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
@@ -22,12 +43,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapGet("/health", () => Results.Ok(new { status = "Healthy", service = "ReviewsService" }));
 
 app.MapGet(
     "/reviews",
     async (ReviewsDbContext db) => await db.Reviews.AsNoTracking().ToListAsync()
-);
+).RequireAuthorization("CustomerOrAdmin");
 app.MapPost(
     "/reviews",
     async (ReviewsDbContext db, Review r) =>
@@ -36,7 +59,7 @@ app.MapPost(
         await db.SaveChangesAsync();
         return Results.Created($"/reviews/{r.Id}", r);
     }
-);
+).RequireAuthorization("CustomerOrAdmin");
 
 app.Run();
 

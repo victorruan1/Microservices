@@ -164,3 +164,6 @@
 /Users/victorruan/MicroService/Microservices/src/Services/ProductService/ProductService/obj/Debug/net9.0/ProductService.genruntimeconfig.cache
 /Users/victorruan/MicroService/Microservices/src/Services/ProductService/ProductService/obj/Debug/net9.0/ref/ProductService.dll
 /Users/victorruan/MicroService/Microservices/src/Services/ProductService/ProductService/obj/Debug/net9.0/ProductService.sourcelink.json
+/Users/victorruan/MicroService/Microservices/src/Services/ProductService/ProductService/bin/Debug/net9.0/ProductService.staticwebassets.runtime.json
+/Users/victorruan/MicroService/Microservices/src/Services/ProductService/ProductService/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/victorruan/MicroService/Microservices/src/Services/ProductService/ProductService/obj/Debug/net9.0/compressed/cu28xwwigd-bnskvptcdp.gz

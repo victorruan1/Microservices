@@ -164,3 +164,4 @@
 /Users/victorruan/MicroService/Microservices/src/Services/ReviewsService/ReviewsService/obj/Debug/net9.0/ReviewsService.genruntimeconfig.cache
 /Users/victorruan/MicroService/Microservices/src/Services/ReviewsService/ReviewsService/obj/Debug/net9.0/ref/ReviewsService.dll
 /Users/victorruan/MicroService/Microservices/src/Services/ReviewsService/ReviewsService/obj/Debug/net9.0/ReviewsService.sourcelink.json
+/Users/victorruan/MicroService/Microservices/src/Services/ReviewsService/ReviewsService/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

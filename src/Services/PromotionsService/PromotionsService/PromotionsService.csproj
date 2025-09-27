@@ -18,10 +18,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+  <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.17.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../BuildingBlocks/EShop.Messaging/EShop.Messaging/EShop.Messaging.csproj" />
   </ItemGroup>
 
 </Project>

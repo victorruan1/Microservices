@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using ProductService.Contracts;
 using ProductService.Data;
@@ -8,12 +9,14 @@ namespace ProductService.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ProductController : ControllerBase
 {
     private readonly ProductDbContext _db;
 
     public ProductController(ProductDbContext db) => _db = db;
 
+    [AllowAnonymous]
     [HttpGet("GetListProducts")]
     public async Task<ActionResult<PagedResult<ProductListItemDto>>> GetListProducts(
         [FromQuery] int page = 1,
@@ -37,6 +40,7 @@ public class ProductController : ControllerBase
         return Ok(new PagedResult<ProductListItemDto>(items, page, pageSize, total));
     }
 
+    [AllowAnonymous]
     [HttpGet("GetProductById/{id:int}")]
     public async Task<ActionResult<ProductDetailDto>> GetProductById(int id)
     {
@@ -51,6 +55,7 @@ public class ProductController : ControllerBase
         return Ok(ToDetailDto(product));
     }
 
+    [AllowAnonymous]
     [HttpGet("GetProductByName")]
     public async Task<ActionResult<IEnumerable<ProductListItemDto>>> GetProductByName(
         [FromQuery] string name
@@ -63,6 +68,7 @@ public class ProductController : ControllerBase
         return Ok(products);
     }
 
+    [AllowAnonymous]
     [HttpGet("GetProductByCategoryId/{categoryId:int}")]
     public async Task<ActionResult<IEnumerable<ProductListItemDto>>> GetByCategory(int categoryId)
     {
@@ -73,6 +79,7 @@ public class ProductController : ControllerBase
         return Ok(products);
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost("Save")]
     public async Task<ActionResult<ProductDetailDto>> Save([FromBody] CreateProductRequest request)
     {
@@ -108,6 +115,7 @@ public class ProductController : ControllerBase
         );
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPut("Update")]
     public async Task<ActionResult<ProductDetailDto>> Update(
         [FromBody] UpdateProductRequest request
@@ -142,6 +150,7 @@ public class ProductController : ControllerBase
         return Ok(ToDetailDto(product));
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPut("InActive")]
     public async Task<ActionResult> InActive([FromQuery] int id)
     {
@@ -153,6 +162,7 @@ public class ProductController : ControllerBase
         return NoContent();
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpDelete("DeleteProduct")]
     public async Task<ActionResult> DeleteProduct([FromQuery] int id)
     {

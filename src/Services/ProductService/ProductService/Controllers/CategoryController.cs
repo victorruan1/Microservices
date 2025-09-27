@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProductService.Data;
@@ -7,12 +8,14 @@ namespace ProductService.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class CategoryController : ControllerBase
 {
     private readonly ProductDbContext _db;
 
     public CategoryController(ProductDbContext db) => _db = db;
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<object>>> GetAll() =>
         Ok(
@@ -26,6 +29,7 @@ public class CategoryController : ControllerBase
                 .ToListAsync()
         );
 
+    [AllowAnonymous]
     [HttpGet("{id:int}")]
     public async Task<ActionResult<object>> Get(int id)
     {
@@ -42,6 +46,7 @@ public class CategoryController : ControllerBase
         );
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<ActionResult> Create([FromBody] Category category)
     {
@@ -59,6 +64,7 @@ public class CategoryController : ControllerBase
         );
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPut("{id:int}")]
     public async Task<ActionResult> Update(int id, [FromBody] Category dto)
     {
@@ -71,6 +77,7 @@ public class CategoryController : ControllerBase
         return NoContent();
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult> Delete(int id)
     {
@@ -85,12 +92,14 @@ public class CategoryController : ControllerBase
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class CategoryVariationController : ControllerBase
 {
     private readonly ProductDbContext _db;
 
     public CategoryVariationController(ProductDbContext db) => _db = db;
 
+    [AllowAnonymous]
     [HttpGet("ByCategory/{categoryId:int}")]
     public async Task<ActionResult<IEnumerable<object>>> GetByCategory(int categoryId) =>
         Ok(
@@ -105,6 +114,7 @@ public class CategoryVariationController : ControllerBase
                 .ToListAsync()
         );
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<ActionResult> Create([FromBody] CategoryVariation variation)
     {
@@ -125,12 +135,14 @@ public class CategoryVariationController : ControllerBase
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ProductVariationController : ControllerBase
 {
     private readonly ProductDbContext _db;
 
     public ProductVariationController(ProductDbContext db) => _db = db;
 
+    [AllowAnonymous]
     [HttpGet("Values/{variationId:int}")]
     public async Task<ActionResult<IEnumerable<object>>> GetValues(int variationId) =>
         Ok(
@@ -145,6 +157,7 @@ public class ProductVariationController : ControllerBase
                 .ToListAsync()
         );
 
+    [Authorize(Roles = "Admin")]
     [HttpPost("Values")]
     public async Task<ActionResult> CreateValue([FromBody] VariationValue value)
     {

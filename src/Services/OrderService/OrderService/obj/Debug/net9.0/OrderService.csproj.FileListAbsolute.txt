@@ -165,3 +165,4 @@
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/OrderService.pdb
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/OrderService.genruntimeconfig.cache
 /Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/obj/Debug/net9.0/ref/OrderService.dll
+/Users/victorruan/MicroService/Microservices/src/Services/OrderService/OrderService/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

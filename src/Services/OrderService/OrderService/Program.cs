@@ -1,4 +1,7 @@
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -20,13 +23,35 @@ builder.Services.AddDbContext<OrderDbContext>(o =>
 // Register only the direct-to-queue RabbitMQ publisher
 builder.Services.AddSingleton<OrderQueuePublisher>();
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+        };
+    });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", p => p.RequireRole("Admin"));
+    options.AddPolicy("CustomerOrAdmin", p => p.RequireRole("Customer", "Admin"));
+});
+
 var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapGet("/health", () => Results.Ok(new { status = "Healthy", service = "OrderService" }));
 
-app.MapGet("/orders", async (OrderDbContext db) => await db.Orders.AsNoTracking().ToListAsync());
+app.MapGet("/orders", async (OrderDbContext db) => await db.Orders.AsNoTracking().ToListAsync())
+    .RequireAuthorization("CustomerOrAdmin");
 app.MapPost(
     "/orders",
     async (OrderDbContext db, Order order, OrderQueuePublisher queuePublisher) =>
@@ -41,7 +66,7 @@ app.MapPost(
 
         return Results.Created($"/orders/{order.Id}", order);
     }
-);
+).RequireAuthorization("CustomerOrAdmin");
 
 // Update order shipping status (called by ShippingService)
 app.MapPut(
@@ -55,7 +80,7 @@ app.MapPut(
         await db.SaveChangesAsync();
         return Results.NoContent();
     }
-);
+).RequireAuthorization("AdminOnly");
 
 app.Run();
 
