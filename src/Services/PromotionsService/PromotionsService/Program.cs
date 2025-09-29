@@ -52,11 +52,8 @@ builder.Services.AddSingleton<IPromotionEventPublisher, AzureServiceBusPromotion
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthentication();
 app.UseAuthorization();
